@@ -3,8 +3,6 @@
 
 library(tidyverse)
 
-install.packages("readxl")
-
 library(readxl)
 
 # Read Data ---------------------------------------------------------------
