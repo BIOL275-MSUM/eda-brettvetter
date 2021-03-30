@@ -35,16 +35,17 @@ data folder I created on my laptop.
 
 ### Data Preparation
 
-After I moved the data set into my folder, I had to get the data into my
-own data table in r studio (RStudio Team 2020) using the packages dplyr
-(Wickham et. al 2020) and readxl (Wickham and Bryan 2019). I then
-assigned the function read\_excel to the term “download data”. This
-function allows me to read in data coming from an excel file. Within
-that function I then used the sheet and skip functions to select which
-sheets of data I was using for my analysis. I Then used the glimpse
-function to preview the data I am using. Then I used the transmute
-function to select the specific variables I would like to use for my
-analysis.
+For this data analysis I used Rstudio version 1.3.1093 (RStudio Team
+2020) which is in R version 4.0.3(R Core Team 2020). I had to download
+my data through excel, so to get the data into my own data table in r
+studio I used the packages dplyr (Wickham et. al 2020) and readxl
+(Wickham and Bryan 2019). I then assigned the function read\_excel to
+the term “download data”. This function allows me to read in data coming
+from an excel file. Within that function I then used the sheet and skip
+functions to select which sheets of data I was using for my analysis. I
+Then used the glimpse function to preview the data I was going to use.
+Then I used the transmute function to select the specific variables that
+I wanted to use for my analysis.
 
 ## Results
 
