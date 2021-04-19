@@ -43,11 +43,7 @@ For this data analysis I used Rstudio version 1.3.1093 (RStudio Team 2020) which
 ```{r}
 
 library(tidyverse)
-
 library(readxl)
-
-install.packages("corrplot")
-
 library(corrplot)
 
 # Read Data ---------------------------------------------------------------
