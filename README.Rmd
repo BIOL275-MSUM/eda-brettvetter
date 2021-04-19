@@ -1,29 +1,132 @@
 ---
-title: "Effects of Housing Problems on Life Expectancy"
+title: "Effects of Housing Problems and Home Life on our Overall Health"
 author: "Brett Vetter"
 date: "`r Sys.Date()`"
 output: github_document
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE)
+```
+
 ## Abstract 
 
-Often times when people think of public health, the home you live in does not come to mind. But many people all over the country and in Minnesota have severe housing problems, a home with severe housing problems are households with at least one of four housing problems: overcrowding, high housing costs, lack of kitchen facilities, or lack of plumbing facilities. So, the question I have is, do severe housing problems have an effect on your overall health and your life expectancy? I will be using data from the Minnesota Health Outcomes data set, from countyhealthrankings.org.  My exploratory data analysis will compare the variables of percentage of Severe Housing problems with Life expectancy among counties in Minnesota. I believe the results of this analysis will help medical workers and public health workers better focus on simple things like where people eat, sleep, play to help diagnose and treat people’s health issues and keep people as healthy as possible. 
+  Often times when people think of public health, the home you live in does not come to mind. But many people all over the country and in Minnesota have severe housing problems. A home with severe housing problems are households with at least one of four housing problems: overcrowding, high housing costs, lack of kitchen facilities, or lack of plumbing facilities. These things affect your everyday life and tend to be ignored when it comes to your overall health. People tend to not correlate living in poverty or our mental health at home with our overall health either. So the question I have is, do severe housing problems, living in poverty growing up and living with untreated poor mental health have an effect on your overall health and your life expectancy?  I will be using data from the Minnesota Health Outcomes data set, from countyhealthrankings.org. The data set consists of variables pertaining to health outcomes from the year 2020, specifically looking at the counties in Minnesota. 
 
 ## Introduction
+
+ My exploratory data analysis will look at the correlation between % of severe housing problems, average number of mentally unhealthy days, % of children in poverty and % of smokers with life expectancy and % of fair or poor health among counties in Minnesota. I will be looking at the correlation some unaddressed issues I mentioned have on our overall health, along with the correlation other more addressed issues have on our overall health. I believe the results of this analysis will help medical  and public health workers better focus on simple health factors like where people eat, sleep and spend most of their time to help diagnose and more efficiently treat people’s health issues. When treating patients for health issues we need to pay more attention to the factors that may be the root to their issues and correcting those factors within our communities. 
 
 ## Methods
 
 ### Data Acquisition
 
-I found my data on countyhealthrankings.org (U of Wisconsin 2020). I specifically looked at the Minnesota county health rankings. I went to the download tab on the Minnesota Rankings Page. Once on the download tab, I chose the excel sheet "2020 Minnesota Data" and downloaded it. After I downloaded the excel sheet, I saved the excel data set to my data folder I created on my laptop.
+I found my data on countyhealthrankings.org (U of Wisconsin 2020). I specifically looked at the Minnesota county health rankings. There I found and chose the excel sheet "2020 Minnesota Data" and downloaded it. After I downloaded the excel sheet, I saved the data set to my data folder I created.
+
+### Data Description
+
+My data consists of 90 rows, each row representing a different county in Minnesota. The variables I chose to use from the data set were:
+Deaths - Numerical Discrete 
+% Housing problems - Numerical Continuous 
+% Fair or poor health - Numerical Continuous
+Life expectancy - Numerical Continuous 
+% Smokers - Numerical Continuous
+Average number of mentally unhealthy days - Numerical Continuous
+% of children in poverty - Numerical Continuous
 
 ### Data Preparation
 
-For this data analysis I used Rstudio version 1.3.1093 (RStudio Team 2020) which is in R version 4.0.3(R Core Team 2020). I had to download my data through excel, so to get the data into my own data table in r studio I used the packages dplyr (Wickham et. al 2020) and readxl (Wickham and Bryan 2019). I then assigned the function read_excel to the term "download data". This function allows me to read in data coming from an excel file. Within that function I then used the sheet and skip functions to select which sheets of data I was using for my analysis. I Then used the glimpse function to preview the data I was going to use. Then I used the transmute function to select the specific variables that I wanted to use for my analysis. 
+For this data analysis I used Rstudio version 1.3.1093 (RStudio Team 2020) which is in R version 4.0.3(R Core Team 2020). I had to download my data through excel, so to get the data into my own data table in r studio I used the packages dplyr (Wickham et. al 2020) and readxl (Wickham and Bryan 2019). I then assigned the function read_excel to the term "download data". This function allows me to read in data coming from an excel file. Within that function I then used the sheet and skip functions to select which sheets of data I was using for my analysis. The data contained many variables I was not interested in, which I removed. The ones I kept were: % of severe housing problems, average number of mentally unhealthy days, % of children in poverty, % fair or poor health, life expectancy, and % smokers. 
 
 ## Results
 
+```{r}
+
+library(tidyverse)
+
+library(readxl)
+
+install.packages("corrplot")
+
+library(corrplot)
+
+# Read Data ---------------------------------------------------------------
+ranked_meas_data <- read_excel("Data/2020 County Health Rankings Minnesota Data - v1_0 (3).xlsx", 
+                            sheet= "Ranked Measure Data", skip = 1)
+ranked_meas_data
+glimpse(ranked_meas_data)
+
+ranked_meas_data <- 
+  transmute(
+    ranked_meas_data,
+    FIPS,
+    State,
+    County,
+    Deaths,
+    Housing_Probs = `% Severe Housing Problems`,
+    FP_Health = `% Fair or Poor Health`,
+    Smokers = `% Smokers`,
+    Mental_Unhealthy_Days = `Average Number of Mentally Unhealthy Days`,
+    Children_Poverty = `% Children in Poverty`
+  )
+
+add_meas_data <- read_excel("Data/2020 County Health Rankings Minnesota Data - v1_0 (3).xlsx",
+                               sheet = "Additional Measure Data", skip = 1)
+
+add_meas_data <-
+  transmute(
+    add_meas_data,
+    FIPS,
+    Life_Expec = `Life Expectancy`
+  )
+
+joined_data <- inner_join(ranked_meas_data, add_meas_data, by = "FIPS")
+
+joined_data
+
+# Plots --------------------------------------------------------------
+
+joined_data %>%
+  filter(!is.na(County)) %>% 
+  select(-FIPS, -State, -County, -Deaths) %>% 
+  cor(use="na.or.complete") %>%
+  corrplot(method="circle")
+
+ggplot(joined_data, aes(x=Housing_Probs, y=FP_Health))+ geom_point()+
+  geom_smooth(method=lm)
+
+ggplot(joined_data, aes(x=Housing_Probs, y=Life_Expec))+ geom_point()+
+  geom_smooth(method=lm)
+
+ggplot(joined_data, aes(x=Smokers, y=FP_Health))+ geom_point()+
+  geom_smooth(method=lm)
+
+ggplot(joined_data, aes(x=Smokers, y=Life_Expec))+ geom_point()+
+  geom_smooth(method=lm)
+
+ggplot(joined_data, aes(x=Mental_Unhealthy_Days, y=FP_Health))+ geom_point()+
+  geom_smooth(method=lm)
+
+ggplot(joined_data, aes(x=Mental_Unhealthy_Days, y=Life_Expec))+ geom_point()+
+  geom_smooth(method=lm)
+
+ggplot(joined_data, aes(x=Housing_Probs, y=Mental_Unhealthy_Days))+ geom_point()+
+  geom_smooth(method=lm)
+
+ggplot(joined_data, aes(x=Children_Poverty, y=FP_Health))+ geom_point()+
+  geom_smooth(method=lm)
+
+ggplot(joined_data, aes(x=Children_Poverty, y=Life_Expec))+ geom_point()+
+  geom_smooth(method=lm)
+
+ggplot(joined_data, aes(x=Children_Poverty, y=Mental_Unhealthy_Days))+ geom_point()+
+  geom_smooth(method=lm)
+
+```
+
 ## Discussion
+
+
 
 ## Literature Cited
 
