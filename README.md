@@ -8,6 +8,9 @@ Presentation ID: 4994
 
 Brett Vetter, Dr. Chris Merkord
 
+Biosciences Department, Minnesota State University Moorhead, 1104 7th
+Avenue South, Moorhead, MN 56563 USA
+
 ## Abstract
 
 Often times when people think of public health, the home you live in
@@ -80,35 +83,43 @@ poor health, life expectancy, and % smokers.
 
 ![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
-Figure 1.
+Figure 1. Correllation between % of Severe Housing Problems and % of
+Fair or Poor Health.
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
-Figure 2.
+Figure 2. Correllation between % of Severe Housing Problems and Life
+Expectancy.
 
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
-Figure 3.
+Figure 3. Correllation between average number of mentally unhealthy days
+and % of Fair or Poor Health.
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
-Figure 4.
+Figure 4. Correllation between average number of mentally unhealthy days
+and Life Excpectancy.
 
 ![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
-Figure 5.
+Figure 5. Correllation between % of Severe Housing Problems and average
+number of mentally unhealthy days.
 
 ![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
-Figure 6.
+Figure 6. Correllation between % of children in poverty and % of Fair or
+Poor Health.
 
 ![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
-Figure 7.
+Figure 7. Correllation between % of children in poverty and Life
+Expectancy.
 
 ![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
-Figure 8.
+Figure 8. Correllation between % of children in poverty and average
+number of mentally unhealthy days.
 
 ## Discussion
 

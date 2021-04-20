@@ -11,6 +11,8 @@ Presentation ID: 4994
 
 Brett Vetter, Dr. Chris Merkord
 
+Biosciences Department, Minnesota State University Moorhead, 1104 7th Avenue South, Moorhead, MN 56563 USA
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE)
 ```
@@ -81,56 +83,56 @@ ggplot(joined_data, aes(x=Housing_Probs, y=FP_Health))+ geom_point()+
   geom_smooth(method=lm)
 ```
 
-Figure 1. 
+Figure 1. Correllation between % of Severe Housing Problems and % of Fair or Poor Health. 
 
 ```{r}
 ggplot(joined_data, aes(x=Housing_Probs, y=Life_Expec))+ geom_point()+
   geom_smooth(method=lm)
 ```
 
-Figure 2.
+Figure 2. Correllation between % of Severe Housing Problems and Life Expectancy. 
 
 ```{r}
 ggplot(joined_data, aes(x=Mental_Unhealthy_Days, y=FP_Health))+ geom_point()+
   geom_smooth(method=lm)
 ```
 
-Figure 3.
+Figure 3. Correllation between average number of mentally unhealthy days and % of Fair or Poor Health. 
 
 ```{r}
 ggplot(joined_data, aes(x=Mental_Unhealthy_Days, y=Life_Expec))+ geom_point()+
   geom_smooth(method=lm)
 ```
 
-Figure 4. 
+Figure 4. Correllation between average number of mentally unhealthy days and Life Excpectancy. 
 
 ```{r}
 ggplot(joined_data, aes(x=Housing_Probs, y=Mental_Unhealthy_Days))+ geom_point()+
   geom_smooth(method=lm)
 ```
 
-Figure 5. 
+Figure 5. Correllation between % of Severe Housing Problems and average number of mentally unhealthy days. 
 
 ```{r}
 ggplot(joined_data, aes(x=Children_Poverty, y=FP_Health))+ geom_point()+
   geom_smooth(method=lm)
 ```
 
-Figure 6. 
+Figure 6. Correllation between % of children in poverty and % of Fair or Poor Health. 
 
 ```{r}
 ggplot(joined_data, aes(x=Children_Poverty, y=Life_Expec))+ geom_point()+
   geom_smooth(method=lm)
 ```
 
-Figure 7. 
+Figure 7. Correllation between % of children in poverty and Life Expectancy. 
 
 ```{r}
 ggplot(joined_data, aes(x=Children_Poverty, y=Mental_Unhealthy_Days))+ geom_point()+
   geom_smooth(method=lm)
 ```
 
-Figure 8. 
+Figure 8. Correllation between % of children in poverty and average number of mentally unhealthy days. 
 
 ## Discussion
 
