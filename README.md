@@ -2,6 +2,11 @@ Effects of Housing Problems and Home Life on Overall Health
 ================
 Brett Vetter, Dr. Chris Merkord
 
+Presentation ID: 4994
+
+Biosciences Department, Minnesota State University Moorhead, 1104 7th
+Avenue South, Moorhead, MN 56563 USA
+
 ## Abstract
 
 Often times when people think of public health, the home you live in
@@ -49,11 +54,11 @@ folder I created.
 ### Data Description
 
 My data consists of 90 rows, each row representing a different county in
-Minnesota. The variables I chose to use from the data set were: Deaths -
-Numerical Discrete % Housing problems - Numerical Continuous % Fair or
-poor health - Numerical Continuous Life expectancy - Numerical
-Continuous Average number of mentally unhealthy days - Numerical
-Continuous % of children in poverty - Numerical Continuous
+Minnesota. The variables I chose to use from the data set were: - Deaths
+- Numerical Discrete - % Housing problems - Numerical Continuous - %
+Fair or poor health - Numerical Continuous - Life expectancy - Numerical
+Continuous - Average number of mentally unhealthy days - Numerical
+Continuous - % of children in poverty - Numerical Continuous
 
 ### Data Preparation
 
@@ -72,7 +77,21 @@ poor health, life expectancy, and % smokers.
 
 ## Results
 
-![](README_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-1-2.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-1-3.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-1-4.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-1-5.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-1-6.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-1-7.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-1-8.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-1-9.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- --> Figure 1.
+
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- --> Figure 2.
+
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- --> Figure 3.
+
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- --> Figure 4.
+
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- --> Figure 5.
+
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- --> Figure 6.
+
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- --> Figure 7.
+
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- --> Figure 8.
 
 ## Discussion
 

@@ -1,10 +1,11 @@
 ---
 title: "Effects of Housing Problems and Home Life on Overall Health"
 author: "Brett Vetter, Dr. Chris Merkord"
-presentation ID: 4994
-department: Biosciences Department, Minnesota State University Moorhead, 1104 7th Avenue South, Moorhead, MN 56563 USA
 output: github_document
 ---
+Presentation ID: 4994
+
+Biosciences Department, Minnesota State University Moorhead, 1104 7th Avenue South, Moorhead, MN 56563 USA
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE)
@@ -27,12 +28,12 @@ I found my data on countyhealthrankings.org (U of Wisconsin 2020). I specificall
 ### Data Description
 
 My data consists of 90 rows, each row representing a different county in Minnesota. The variables I chose to use from the data set were:
-Deaths - Numerical Discrete 
-% Housing problems - Numerical Continuous 
-% Fair or poor health - Numerical Continuous
-Life expectancy - Numerical Continuous 
-Average number of mentally unhealthy days - Numerical Continuous
-% of children in poverty - Numerical Continuous
+- Deaths - Numerical Discrete 
+- % Housing problems - Numerical Continuous 
+- % Fair or poor health - Numerical Continuous
+- Life expectancy - Numerical Continuous 
+- Average number of mentally unhealthy days - Numerical Continuous
+- % of children in poverty - Numerical Continuous
 
 ### Data Preparation
 
@@ -75,39 +76,55 @@ add_meas_data <-
 
 joined_data <- inner_join(ranked_meas_data, add_meas_data, by = "FIPS")
 
-# Plots -------------------------------------------------------------
+```
 
-joined_data %>%
-  filter(!is.na(County)) %>% 
-  select(-FIPS, -State, -County, -Deaths) %>% 
-  cor(use="na.or.complete") %>%
-  corrplot(method="circle")
-
+```{r}
 ggplot(joined_data, aes(x=Housing_Probs, y=FP_Health))+ geom_point()+
   geom_smooth(method=lm)
+```
+Figure 1. 
 
+```{r}
 ggplot(joined_data, aes(x=Housing_Probs, y=Life_Expec))+ geom_point()+
   geom_smooth(method=lm)
+```
+Figure 2.
 
+```{r}
 ggplot(joined_data, aes(x=Mental_Unhealthy_Days, y=FP_Health))+ geom_point()+
   geom_smooth(method=lm)
+```
+Figure 3.
 
+```{r}
 ggplot(joined_data, aes(x=Mental_Unhealthy_Days, y=Life_Expec))+ geom_point()+
   geom_smooth(method=lm)
+```
+Figure 4. 
 
+```{r}
 ggplot(joined_data, aes(x=Housing_Probs, y=Mental_Unhealthy_Days))+ geom_point()+
   geom_smooth(method=lm)
+```
+Figure 5. 
 
+```{r}
 ggplot(joined_data, aes(x=Children_Poverty, y=FP_Health))+ geom_point()+
   geom_smooth(method=lm)
+```
+Figure 6. 
 
+```{r}
 ggplot(joined_data, aes(x=Children_Poverty, y=Life_Expec))+ geom_point()+
   geom_smooth(method=lm)
+```
+Figure 7. 
 
+```{r}
 ggplot(joined_data, aes(x=Children_Poverty, y=Mental_Unhealthy_Days))+ geom_point()+
   geom_smooth(method=lm)
-
 ```
+Figure 8. 
 
 ## Discussion
 
