@@ -1,11 +1,12 @@
 Effects of Housing Problems and Home Life on Overall Health
 ================
+Brett Vetter, Dr. Chris Merkord
 
 ## Abstract
 
 Often times when people think of public health, the home you live in
 does not come to mind. But many people all over the country and in
-Minnesota have severe housing problems. A home with severe housing
+Minnesota have severe housing problems. Homes with severe housing
 problems are households with at least one of four housing problems:
 overcrowding, high housing costs, lack of kitchen facilities, or lack of
 plumbing facilities. These things affect your everyday life and tend to
@@ -22,18 +23,18 @@ at the counties in Minnesota.
 ## Introduction
 
 My exploratory data analysis will look at the correlation between % of
-severe housing problems, average number of mentally unhealthy days, % of
-children in poverty and % of smokers with life expectancy and % of fair
-or poor health among counties in Minnesota. I will be looking at the
-correlation some unaddressed issues I mentioned have on our overall
-health, along with the correlation other more addressed issues have on
-our overall health. I believe the results of this analysis will help
-medical and public health workers better focus on simple health factors
-like where people eat, sleep and spend most of their time to help
-diagnose and more efficiently treat people’s health issues. When
-treating patients for health issues we need to pay more attention to the
-factors that may be the root to their issues and correcting those
-factors within our communities.
+severe housing problems, average number of mentally unhealthy days and %
+of children in poverty with life expectancy and % of fair or poor health
+among counties in Minnesota. I will be looking at the correlation some
+unaddressed issues I mentioned have on our overall health, along with
+the correlation other more addressed issues have on our overall health.
+I believe the results of this analysis will help medical and public
+health workers better focus on simple health factors like where people
+eat, sleep and spend most of their time to help diagnose and more
+efficiently treat people’s health issues. When treating patients for
+health issues we need to pay more attention to the factors that may be
+the root to their issues and correcting those factors within our
+communities.
 
 ## Methods
 
@@ -51,9 +52,8 @@ My data consists of 90 rows, each row representing a different county in
 Minnesota. The variables I chose to use from the data set were: Deaths -
 Numerical Discrete % Housing problems - Numerical Continuous % Fair or
 poor health - Numerical Continuous Life expectancy - Numerical
-Continuous % Smokers - Numerical Continuous Average number of mentally
-unhealthy days - Numerical Continuous % of children in poverty -
-Numerical Continuous
+Continuous Average number of mentally unhealthy days - Numerical
+Continuous % of children in poverty - Numerical Continuous
 
 ### Data Preparation
 

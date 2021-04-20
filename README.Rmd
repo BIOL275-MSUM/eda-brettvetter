@@ -1,8 +1,8 @@
 ---
 title: "Effects of Housing Problems and Home Life on Overall Health"
-Author: "Brett Vetter, Dr. Chris Merkord"
-Presentation ID: 4994
-Department: Biosciences Department, Minnesota State University Moorhead, 1104 7th Avenue South, Moorhead, MN 56563 USA
+author: "Brett Vetter, Dr. Chris Merkord"
+presentation ID: 4994
+department: Biosciences Department, Minnesota State University Moorhead, 1104 7th Avenue South, Moorhead, MN 56563 USA
 output: github_document
 ---
 
@@ -45,7 +45,8 @@ library(tidyverse)
 library(readxl)
 library(corrplot)
 
-# Read Data ---------------------------------------------------------------
+# Read Data ---------------------------------------------------------
+
 ranked_meas_data <- read_excel("Data/2020 County Health Rankings Minnesota Data - v1_0 (3).xlsx", 
                             sheet= "Ranked Measure Data", skip = 1)
 
@@ -58,7 +59,6 @@ ranked_meas_data <-
     Deaths,
     Housing_Probs = `% Severe Housing Problems`,
     FP_Health = `% Fair or Poor Health`,
-    Smokers = `% Smokers`,
     Mental_Unhealthy_Days = `Average Number of Mentally Unhealthy Days`,
     Children_Poverty = `% Children in Poverty`
   )
@@ -75,8 +75,7 @@ add_meas_data <-
 
 joined_data <- inner_join(ranked_meas_data, add_meas_data, by = "FIPS")
 
-
-# Plots --------------------------------------------------------------
+# Plots -------------------------------------------------------------
 
 joined_data %>%
   filter(!is.na(County)) %>% 
