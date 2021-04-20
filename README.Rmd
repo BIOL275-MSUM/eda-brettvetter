@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE)
 
 ## Introduction
 
- My exploratory data analysis will look at the correlation between % of severe housing problems, average number of mentally unhealthy days and % of children in poverty with life expectancy and % of fair or poor health among counties in Minnesota. I will be looking at the correlation some unaddressed issues I mentioned have on our overall health, along with the correlation other more addressed issues have on our overall health. I believe the results of this analysis will help medical  and public health workers better focus on simple health factors like where people eat, sleep and spend most of their time to help diagnose and more efficiently treat people’s health issues. When treating patients for health issues we need to pay more attention to the factors that may be the root to their issues and correcting those factors within our communities. 
+ My exploratory data analysis will look at the correlation between % of severe housing problems, average number of mentally unhealthy days and % of children in poverty, with life expectancy and % of fair or poor health among counties in Minnesota. I will be looking at the effect some of these commonly unaddressed issues  have on our overall health, along with the effect other more addressed issues have on our overall health. I believe the results of this analysis will help medical  and public health workers better focus on simple health factors like where people eat, sleep and spend most of their time to help diagnose and more efficiently treat people’s health issues. When treating patients for health issues we need to pay more attention to the factors that may be the root to their issues and correcting those factors within our communities. 
 
 ## Methods
 
@@ -136,7 +136,9 @@ Figure 8. Correllation between % of children in poverty and average number of me
 
 ## Discussion
 
+Severe housing Problems did have a minor effect on the % of people with fair or poor health and life expectancy, not as much as I though but it for sure is a factor. Poor mental health and children living and growing up in poverty did seem to have a strong effect on the % of people with fair or poor health and life expectancy. Along with that, housing problems had a fairly strong effect on the mental health of people and the % of children living in poverty did seem to have a very strong effect on mental health as well. Plus, as we know now poor mental health has a strong effect on the overall health of people. 
 
+Hopefully medical and public health workers better focus on simple health factors like where we live, the conditions we live in and our mental state we live in every day to help diagnose and more efficiently treat people’s health issues. 
 
 ## Literature Cited
 
