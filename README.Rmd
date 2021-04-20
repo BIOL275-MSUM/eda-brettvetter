@@ -12,11 +12,11 @@ knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE)
 
 ## Abstract 
 
-  Often times when people think of public health, the home you live in does not come to mind. But many people all over the country and in Minnesota have severe housing problems. A home with severe housing problems are households with at least one of four housing problems: overcrowding, high housing costs, lack of kitchen facilities, or lack of plumbing facilities. These things affect your everyday life and tend to be ignored when it comes to your overall health. People tend to not correlate living in poverty or our mental health at home with our overall health either. So the question I have is, do severe housing problems, living in poverty growing up and living with untreated poor mental health have an effect on your overall health and your life expectancy?  I will be using data from the Minnesota Health Outcomes data set, from countyhealthrankings.org. The data set consists of variables pertaining to health outcomes from the year 2020, specifically looking at the counties in Minnesota. 
+  Often times when people think of public health, the home you live in does not come to mind. But many people all over the country and in Minnesota have severe housing problems. Homes with severe housing problems are households with at least one of four housing problems: overcrowding, high housing costs, lack of kitchen facilities, or lack of plumbing facilities. These things affect your everyday life and tend to be ignored when it comes to your overall health. People tend to not correlate living in poverty or our mental health at home with our overall health either. So the question I have is, do severe housing problems, living in poverty growing up and living with untreated poor mental health have an effect on your overall health and your life expectancy?  I will be using data from the Minnesota Health Outcomes data set, from countyhealthrankings.org. The data set consists of variables pertaining to health outcomes from the year 2020, specifically looking at the counties in Minnesota. 
 
 ## Introduction
 
- My exploratory data analysis will look at the correlation between % of severe housing problems, average number of mentally unhealthy days, % of children in poverty and % of smokers with life expectancy and % of fair or poor health among counties in Minnesota. I will be looking at the correlation some unaddressed issues I mentioned have on our overall health, along with the correlation other more addressed issues have on our overall health. I believe the results of this analysis will help medical  and public health workers better focus on simple health factors like where people eat, sleep and spend most of their time to help diagnose and more efficiently treat people’s health issues. When treating patients for health issues we need to pay more attention to the factors that may be the root to their issues and correcting those factors within our communities. 
+ My exploratory data analysis will look at the correlation between % of severe housing problems, average number of mentally unhealthy days and % of children in poverty with life expectancy and % of fair or poor health among counties in Minnesota. I will be looking at the correlation some unaddressed issues I mentioned have on our overall health, along with the correlation other more addressed issues have on our overall health. I believe the results of this analysis will help medical  and public health workers better focus on simple health factors like where people eat, sleep and spend most of their time to help diagnose and more efficiently treat people’s health issues. When treating patients for health issues we need to pay more attention to the factors that may be the root to their issues and correcting those factors within our communities. 
 
 ## Methods
 
@@ -31,7 +31,6 @@ Deaths - Numerical Discrete
 % Housing problems - Numerical Continuous 
 % Fair or poor health - Numerical Continuous
 Life expectancy - Numerical Continuous 
-% Smokers - Numerical Continuous
 Average number of mentally unhealthy days - Numerical Continuous
 % of children in poverty - Numerical Continuous
 
